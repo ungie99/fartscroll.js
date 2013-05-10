@@ -41,7 +41,7 @@
         prefix = ogg_prefix;
     }
     var lastOffset;
-    this.on('scroll.fartscroll', function (event) {
+    return this.on('scroll.fartscroll', function (event) {
         var scrollOffset = Math.floor($(this).scrollTop() / trigger_distance);
         if (lastOffset !== scrollOffset) {
             var rand = Math.floor(Math.random() * audio.length);
