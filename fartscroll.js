@@ -28,8 +28,17 @@
   $.fn.fartscroll = function(trigger_distance) {
     trigger_distance = trigger_distance || 400;
     
-    var player = document.createElement("audio");
-    $("body").append(player);
+    var player;
+
+    if($('#fartscroll-player').length === 0) {
+        player = document.createElement("audio");
+    	player.id = 'fartscroll-player';
+    	$("body").append(player);
+    }
+    else {
+    	player = $('#fartscroll-player').get()[0];
+    }
+    
     var audio;
     var prefix;
     if(player.canPlayType("audio/mp3")) {
